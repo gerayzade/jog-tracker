@@ -15,18 +15,21 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "@vue/test-utils": "^1.2.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^27.0.5",
     "cookie-universal-nuxt": "^2.1.5",
     "core-js": "^3.15.1",
     "inputmask": "^5.0.6",
+    "jest": "^27.0.5",
     "moment": "^2.29.1",
     "nuxt": "^2.15.7",
     "nuxt-env": "^0.1.0",
     "underscore": "^1.13.1",
-    "vuelidate": "^0.7.6",
-    "@vue/test-utils": "^1.2.1",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "^27.0.5",
-    "jest": "^27.0.5",
-    "vue-jest": "^3.0.4"
+    "vue-jest": "^3.0.4",
+    "vuelidate": "^0.7.6"
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.1"
   }
 }
