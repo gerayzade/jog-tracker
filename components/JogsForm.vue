@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 import { required, numeric } from 'vuelidate/lib/validators';
 
@@ -39,13 +39,10 @@ const isDate = (value) => {
 }
 
 export default {
+  name: 'jogs-form',
   props: {
-    operation: {
-      type: String,
-      default: 'create',
-      validator(value) {
-        return ['create', 'update'].indexOf(value) !== -1;
-      }
+    jogId: {
+      type: Number
     }
   },
   validations: {
@@ -65,9 +62,19 @@ export default {
       }
     }
   },
+  computed: {
+    ...mapGetters({
+      jogs: 'jogs/jogsList'
+    }),
+
+    jog() {
+      return this.jogs.find(jog => jog.id === this.jogId) || null;
+    }
+  },
   methods: {
     ...mapActions({
-      addNewJog: 'jogs/addNewJog'
+      addNewJog: 'jogs/addNewJog',
+      editJog: 'jogs/editJog'
     }),
 
     async submit() {
@@ -75,12 +82,25 @@ export default {
       if (this.$v.$error || this.pending) return;
       this.pending = true;
       try {
-        await this.addNewJog(this.form);
+        if (this.jogId) {
+          await this.editJog(this.form);
+        } else {
+          await this.addNewJog(this.form);
+        }
         this.pending = false;
         this.$router.push('/jogs');
       } catch(error) {
         this.pending = false;
       }
+    }
+  },
+  created() {
+    if (this.jog) {
+      this.form.jog_id = this.jog.id;
+      this.form.user_id = this.jog.user_id;
+      this.form.distance = Number(this.jog.distance);
+      this.form.time = Number(this.jog.time);
+      this.form.date = this.jog.humanize_date.replace(/\./g, '/');
     }
   }
 }

@@ -25,6 +25,10 @@ export const actions = {
     const { data: { response } } = await this.$axios.post('/data/jog', data);
     commit('INSERT_JOGS_DATA', { value: response });
   },
+  async editJog({ commit }, data) {
+    const { data: { response } } = await this.$axios.put('/data/jog', data);
+    commit('UPDATE_JOGS_DATA', { value: response });
+  },
   resetJogsData({ commit }) {
     commit('SET_JOGS_DATA', { value: [] });
   }
@@ -35,6 +39,11 @@ export const mutations = {
     state.jogs = payload.value;
   },
   INSERT_JOGS_DATA(state, payload) {
-    Vue.set(state.jogs, state.jogs.length, payload.value);
+    let index = state.jogs.length;
+    Vue.set(state.jogs, index, payload.value);
+  },
+  UPDATE_JOGS_DATA(state, payload) {
+    let index = state.jogs.findIndex(jog => jog.id === payload.value.id);
+    Vue.set(state.jogs, index, payload.value);
   }
 }

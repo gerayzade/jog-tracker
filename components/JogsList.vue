@@ -1,16 +1,6 @@
 <template>
   <div class="jogs-list">
-    <div class="jogs-list__item" v-for="jog in jogsDisplayed" :key="jog.id">
-      <div class="jogs-list__item-left">
-        <svg-icon name="jog" />
-      </div>
-      <div class="jogs-list__item-right">
-        <span>{{ jog.humanize_date }}</span>
-        <strong>Speed: <span>{{ jog.speed }}</span></strong>
-        <strong>Distance: <span>{{ jog.distance }} km</span></strong>
-        <strong>Time: <span>{{ jog.time }} min</span></strong>
-      </div>
-    </div>
+    <jogs-item :jog="jog" v-for="jog in jogsDisplayed" :key="jog.id" />
     <div class="jogs-list__empty" v-if="!jogs.length">
       <svg-icon name="oops" />
       <p>Nothing is there</p>
@@ -29,8 +19,13 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 
+import JogsItem from '~/components/JogsItem';
+
 export default {
   name: 'jogs-list',
+  components: { 
+    JogsItem
+  },
   props: {
     limit: {
       type: Number,
