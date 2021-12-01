@@ -152,6 +152,9 @@ a {
 
   .form-group {
     flex-direction: row;
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
     label {
       width: 90px;
       margin-bottom: 0;

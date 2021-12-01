@@ -14,6 +14,11 @@ export default {
   middleware: 'auth',
   components: {
     JogsForm
+  },
+  head() {
+    return this.$headMeta({
+      title: 'Create a jog'
+    });
   }
 }
 </script>

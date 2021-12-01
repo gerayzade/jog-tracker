@@ -3,17 +3,24 @@ import moment from 'moment';
 import { sortBy } from 'underscore';
 
 export const state = () => ({
-  jogs: []
+  jogs: [],
+  filters: {
+    dateFrom: '',
+    dateTo: ''
+  }
 });
 
 export const getters = {
-  jogsList: s => sortBy(s.jogs, 'id').reverse().map((jog) => ({
-    ...jog,
-    speed: Math.round((jog.distance / jog.time) * 100) / 100,
-    humanize_date: typeof jog.date === 'number' 
-      ? moment.unix(jog.date).format('DD.MM.YYYY')
-      : moment(jog.date).format('DD.MM.YYYY')
-  }))
+  jogsList: s => sortBy(s.jogs, 'id')
+    .reverse()
+    .map((jog) => ({
+      ...jog,
+      speed: Math.round((jog.distance / jog.time) * 100) / 100,
+      humanize_date: typeof jog.date === 'number' 
+        ? moment.unix(jog.date).format('DD.MM.YYYY')
+        : moment(jog.date).format('DD.MM.YYYY')
+    })),
+  filters: s => s.filters
 }
 
 export const actions = {
@@ -31,6 +38,9 @@ export const actions = {
   },
   resetJogsData({ commit }) {
     commit('SET_JOGS_DATA', { value: [] });
+  },
+  setJogsFilter({ commit }, filter) {
+    commit('SET_JOGS_FILTER', filter);
   }
 }
 
@@ -45,5 +55,8 @@ export const mutations = {
   UPDATE_JOGS_DATA(state, payload) {
     let index = state.jogs.findIndex(jog => jog.id === payload.value.id);
     Vue.set(state.jogs, index, payload.value);
+  },
+  SET_JOGS_FILTER(state, payload) {
+    Vue.set(state.filters, payload.key, payload.value);
   }
 }

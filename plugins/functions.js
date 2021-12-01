@@ -7,4 +7,7 @@ export default function({ app, route }, inject) {
     url = app.$env.BASE_URL + (url || route.path);
     return generateHeadMeta({ title, description, image, url, locale, preload });
   });
+  inject('dateInputMask', () => {
+    return { alias: 'datetime', inputFormat: 'dd/mm/yyyy', placeholder: 'DD/MM/YYYY' };
+  });
 }

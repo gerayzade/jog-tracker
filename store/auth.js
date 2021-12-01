@@ -1,10 +1,8 @@
 export const state = () => ({
-  user: {},
   loggedIn: false
 });
 
 export const getters = {
-  user: s => s.user,
   loggedIn: s => s.loggedIn
 }
 

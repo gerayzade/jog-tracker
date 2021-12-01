@@ -29,7 +29,7 @@ export default {
   },
   head() {
     return this.$headMeta({
-      title: 'Jogs Data'
+      title: 'Jogs list'
     });
   },
   computed: {

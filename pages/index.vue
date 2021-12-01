@@ -17,7 +17,7 @@ export default {
   },
   head() {
     return this.$headMeta({
-      title: 'Jogs Tracker App'
+      title: 'Jog Tracker App'
     });
   }
 }

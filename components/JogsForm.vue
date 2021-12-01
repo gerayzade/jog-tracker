@@ -17,8 +17,7 @@
       <div class="form-group">
         <label for="input-date">Date</label>
         <input :class="['text-input', { 'invalid': $v.form.date.$error }]" type="text" id="input-date" 
-          v-mask="{ alias: 'datetime', inputFormat: 'dd/mm/yyyy', placeholder: 'DD/MM/YYYY' }"
-          v-model="form.date" />
+          v-mask="$dateInputMask()" v-model="form.date" />
       </div>
       <div class="form-group">
         <button type="submit" :class="['btn btn--white', { pending }]">

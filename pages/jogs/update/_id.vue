@@ -10,7 +10,7 @@
 import JogsForm from '~/components/JogsForm';
 
 export default {
-  name: 'page-jogs-create',
+  name: 'page-jogs-update',
   middleware: 'auth',
   components: {
     JogsForm
@@ -19,6 +19,11 @@ export default {
     if (!store.getters['jogs/jogsList'].length) {
       await store.dispatch('jogs/getJogsData');
     }
+  },
+  head() {
+    return this.$headMeta({
+      title: 'Update yout jog'
+    });
   }
 }
 </script>
