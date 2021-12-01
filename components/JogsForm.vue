@@ -33,8 +33,8 @@ import { mapGetters, mapActions } from 'vuex';
 
 import { required, numeric } from 'vuelidate/lib/validators';
 
-const isDate = (value) => {
-  return value.match(/^[0-9]{2}[\/][0-9]{2}[\/][0-9]{4}$/) !== null;
+const isDate = (date) => {
+  return date.match(/^[0-9]{2}[\/][0-9]{2}[\/][0-9]{4}$/) !== null;
 }
 
 export default {

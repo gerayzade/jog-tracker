@@ -9,7 +9,7 @@
         </nuxt-link>
       </li>
       <li key="logout" v-if="loggedIn">
-        <a role="button" aria-label="Logout" @click="logout">
+        <a role="button" @click="logout">
           {{ 'Logout' | uppercase }}
         </a>
       </li>

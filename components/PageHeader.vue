@@ -6,6 +6,10 @@
           <svg-icon name="logo" />
         </nuxt-link>
         <nav-menu @close-menu="setMenuToggle(false)" />
+        <button :class="['filters-toggle', { 'active': filtersToggle }]" v-if="$route.name === 'jogs'" 
+            @click="setFiltersToggle(!filtersToggle)">
+          <svg-icon name="filter" />
+        </button>
         <button class="menu-toggle" @click="setMenuToggle(!menuToggle)">
           <svg-icon :name="menuToggle ? 'close' : 'menu'" />
         </button>
@@ -26,12 +30,14 @@ export default {
   },
   computed: {
     ...mapGetters({
-      menuToggle: 'menuToggle'
+      menuToggle: 'menuToggle',
+      filtersToggle: 'filtersToggle'
     })
   },
   methods: {
     ...mapActions({
-      setMenuToggle: 'setMenuToggle'
+      setMenuToggle: 'setMenuToggle',
+      setFiltersToggle: 'setFiltersToggle'
     })
   }
 }

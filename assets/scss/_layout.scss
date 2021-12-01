@@ -82,6 +82,14 @@ a {
   font-weight: bold;
 }
 
+.text-green {
+  color: $green-2;
+}
+
+.text-red {
+  color: $red-1;
+}
+
 .text-content {
   .title {
     margin-bottom: 8px;
@@ -94,6 +102,10 @@ a {
       margin-bottom: 30px;
     }
   }
+}
+
+.white-space-nowrap {
+  white-space: nowrap;
 }
 
 .form-group {
@@ -115,10 +127,11 @@ a {
     width: 100%;
     background-color: $white-1;
     height: 31px;
-    padding: 7px 16px;
+    padding: 7px 10px;
     border: 1px solid $grey-1;
     border-radius: 7px;
     opacity: 1;
+    font: inherit;
     color: inherit;
     &::placeholder {
       color: inherit;
@@ -240,8 +253,33 @@ a {
   }
 }
 
+.filters-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 39px;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  transition: border .2s;
+  margin-right: 39px;
+  .svg-icon {
+    display: block;
+    font-size: 26px;
+    fill: $white-1;
+    transition: fill .2s;
+  }
+  &.active {
+    border-color: $green-1;
+    .svg-icon {
+      fill: $green-1;
+    }
+  }
+}
+
 .logo {
   display: block;
+  margin-right: auto;
   .svg-icon {
     width: 98px;
     height: 37px;
@@ -295,6 +333,9 @@ a {
         fill: $grey-3;
       }
     }
+    .filters-toggle {
+      visibility: hidden;
+    }
     .nav-menu {
       display: flex;
     }
@@ -325,6 +366,11 @@ a {
 
   .menu-toggle {
     display: none;
+  }
+
+  .filters-toggle {
+    margin-left: 49px;
+    margin-right: 0;
   }
 
   .nav-menu {

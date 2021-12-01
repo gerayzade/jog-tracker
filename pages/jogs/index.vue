@@ -2,7 +2,7 @@
   <main :class="['main', { 'main--content-centered': !jogs.length }]">
     <div class="container">
       <jogs-list />
-      <div class="btn-add">
+      <div class="btn-add" v-if="jogsTotal > 0">
         <nuxt-link to="/jogs/create" title="Create a jog">
           <svg-icon name="add" />
         </nuxt-link>

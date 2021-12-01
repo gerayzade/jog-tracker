@@ -4,7 +4,7 @@
     <div class="jogs-list__empty" v-if="!jogs.length">
       <svg-icon name="oops" />
       <p>Nothing is there</p>
-      <nuxt-link to="/jogs/create" class="btn">
+      <nuxt-link to="/jogs/create" class="btn" v-if="!total">
         Create your jog first
       </nuxt-link>
     </div>
@@ -39,7 +39,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      jogs: 'jogs/jogsList'
+      jogs: 'jogs/jogsList',
+      total: 'jogs/total'
     }),
     jogsDisplayed() {
       return this.jogs.slice(0, this.showCount);

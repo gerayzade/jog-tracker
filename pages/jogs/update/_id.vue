@@ -22,7 +22,7 @@ export default {
   },
   head() {
     return this.$headMeta({
-      title: 'Update yout jog'
+      title: 'Update jog'
     });
   }
 }

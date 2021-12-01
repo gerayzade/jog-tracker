@@ -8,6 +8,6 @@ export default function({ app, route }, inject) {
     return generateHeadMeta({ title, description, image, url, locale, preload });
   });
   inject('dateInputMask', () => {
-    return { alias: 'datetime', inputFormat: 'dd/mm/yyyy', placeholder: 'DD/MM/YYYY' };
+    return { alias: 'datetime', inputFormat: 'dd/mm/yyyy' };
   });
 }

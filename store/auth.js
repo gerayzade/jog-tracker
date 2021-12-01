@@ -10,7 +10,7 @@ export const actions = {
   async checkToken({ commit }) {
     if (this.$cookies.get('access_token')) {
       try {
-        const { data } = await this.$axios.get('/auth/user');
+        await this.$axios.get('/auth/user');
         commit('SET_LOGGED_IN', { value: true });
       } catch(error) {
         // remove token if it is expired or invalid

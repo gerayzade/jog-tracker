@@ -1,6 +1,7 @@
 .jogs-list {
   margin: 0 -25px;
   &__empty {
+    text-align: center;
     .svg-icon {
       display: block;
       font-size: 85px;
@@ -9,8 +10,10 @@
     p {
       color: $grey-3;
       font-size: 24px;
-      margin: 0 0 145px;
       text-align: center;
+    }
+    .btn {
+      margin-top: 145px;
     }
   }
   &__item {
@@ -66,6 +69,47 @@
   }
 }
 
+.jogs-filters {
+  width: 100%;
+  background-color: $white-2;
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 0;
+  }
+  .form-group {
+    flex-direction: row;
+    transition: opacity .2s;
+    &:not(:last-child) {
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+    label {
+      color: $grey-1;
+      font-size: 13px;
+      width: auto;
+      margin-right: 10px;
+    }
+    input.text-input {
+      font-size: 12px;
+      border-radius: 11px;
+      width: 90px;
+    }
+  }
+}
+
+.expand-enter-active,
+.expand-leave-active {
+  .jogs-filters {
+    &__inner {
+      .form-group {
+        opacity: 0;
+      }
+    }
+  }
+}
+
 @include media-min-width(md) {
   .jogs-list {
     margin: 0;
@@ -91,6 +135,21 @@
       right: 27px;
       .svg-icon {
         font-size: 27px;
+      }
+    }
+  }
+
+  .jogs-filters {
+    .form-group {
+      &:not(:last-child) {
+        margin-right: 45px;
+      }
+      label {
+        margin-right: 15px;
+      }
+      input.text-input {
+        font-size: 13px;
+        width: 100px;
       }
     }
   }
