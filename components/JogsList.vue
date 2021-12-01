@@ -14,9 +14,9 @@
     <div class="jogs-list__empty" v-if="!jogs.length">
       <svg-icon name="oops" />
       <p>Nothing is there</p>
-      <button class="btn">
+      <nuxt-link to="/jogs/create" class="btn">
         Create your jog first
-      </button>
+      </nuxt-link>
     </div>
     <div class="btn-wrap" v-if="jogs.length > showCount">
       <button class="btn btn--green" @click="showCount += limit">

@@ -3,9 +3,9 @@
     <div class="container">
       <jogs-list />
       <div class="btn-add">
-        <a role="button">
+        <nuxt-link to="/jogs/create" title="Create a jog">
           <svg-icon name="add" />
-        </a>
+        </nuxt-link>
       </div>
     </div>
   </main>
@@ -23,7 +23,9 @@ export default {
     JogsList
   },
   async asyncData({ store }) {
-    await store.dispatch('jogs/getJogsData');
+    if (!store.getters['jogs/jogsList'].length) {
+      await store.dispatch('jogs/getJogsData');
+    }
   },
   head() {
     return this.$headMeta({

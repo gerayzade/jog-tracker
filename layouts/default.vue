@@ -35,7 +35,7 @@ export default {
   },
   async beforeMount() {
     if (!this.loggedIn && this.$route.name !== 'index') {
-      this.checkToken();
+      await this.checkToken();
     }
   }
 }

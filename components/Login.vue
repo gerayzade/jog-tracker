@@ -30,7 +30,7 @@ export default {
         this.$router.push('/jogs', () => {
           this.pending = false;
         });
-      } catch {
+      } catch(error) {
         this.pending = false;
       }
     }
@@ -41,14 +41,15 @@ export default {
       await this.checkToken();
       this.$nextTick(() => {
         if (this.loggedIn) {
-          this.$router.push('/jogs', () => {
+          let redirectPath = localStorage.getItem('redirect_path') || '/jogs';
+          this.$router.push(redirectPath, () => {
             this.pending = false;
           });
         } else {
           this.pending = false;
         }
       });
-    } catch {
+    } catch(error) {
       this.pending = false;
     }
   }

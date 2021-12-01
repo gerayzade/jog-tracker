@@ -27,6 +27,7 @@ a {
 }
 
 .container {
+  width: 100%;
   padding: 0 25px;
 }
 
@@ -51,6 +52,9 @@ a {
     background-color: $purple-1;
     border-color: $purple-1;
     color: $white-1;
+  }
+  &.pending {
+    pointer-events: none;
   }
   &--white {
     @include btn-styles($white-1, $purple-1);
@@ -92,12 +96,68 @@ a {
   }
 }
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+  label {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  input.text-input {
+    appearance: none;
+    display: block;
+    width: 100%;
+    background-color: $white-1;
+    height: 31px;
+    padding: 7px 16px;
+    border: 1px solid $grey-1;
+    border-radius: 7px;
+    opacity: 1;
+    color: inherit;
+    &::placeholder {
+      color: inherit;
+      opacity: 1;
+    }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &.invalid {
+      border-color: $red-1;
+    }
+  }
+  .btn {
+    font-size: 13px;
+    line-height: 38px;
+    width: 100%;
+    border-width: 2px;
+  }
+}
+
 @include media-min-width(md) {
   .btn-add {
     right: 40px;
     bottom: 40px;
     .svg-icon {
       font-size: 60px;
+    }
+  }
+
+  .form-group {
+    flex-direction: row;
+    label {
+      width: 90px;
+      margin-bottom: 0;
+    }
+    input.text-input {
+      width: 236px;
     }
   }
 

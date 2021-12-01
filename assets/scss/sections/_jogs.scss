@@ -28,6 +28,7 @@
       }
     }
     &-right {
+      min-width: 135px;
       display: flex;
       flex-direction: column;
       span {
@@ -44,6 +45,27 @@
   }
 }
 
+.jogs-form {
+  position: relative;
+  width: 100%;
+  background-color: $green-2;
+  padding: 64px 35px 37px;
+  border-radius: 29px;
+  &__inner {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  &__close {
+    position: absolute;
+    top: 21px;
+    right: 21px;
+    .svg-icon {
+      font-size: 19px;
+      fill: $white-1;
+    }
+  }
+}
+
 @include media-min-width(md) {
   .jogs-list {
     margin: 0;
@@ -56,6 +78,20 @@
     &__item {
       border-bottom: none;
       padding: 44px 0;
+    }
+  }
+
+  .jogs-form {
+    width: 503px;
+    margin: 0 auto;
+    padding: 101px 35px 47px;
+    border-radius: 44px;
+    &__close {
+      top: 27px;
+      right: 27px;
+      .svg-icon {
+        font-size: 27px;
+      }
     }
   }
 }

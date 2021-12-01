@@ -9,10 +9,11 @@ export default {
     '~/assets/scss/style.scss'
   ],
   plugins: [
-    { src: '~/mixins/global' },
     { src: '~/plugins/components' },
     { src: '~/plugins/functions' },
-    { src: '~/plugins/axios' }
+    { src: '~/plugins/axios' },
+    { src: '~/plugins/both-sides', ssr: true },
+    { src: '~/plugins/client-only', ssr: false }
   ],
   modules: [
     '@nuxtjs/axios',

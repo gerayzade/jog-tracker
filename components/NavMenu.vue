@@ -9,7 +9,7 @@
         </nuxt-link>
       </li>
       <li key="logout" v-if="loggedIn">
-        <a role="button" @click="logout">
+        <a role="button" aria-label="Logout" @click="logout">
           {{ 'Logout' | uppercase }}
         </a>
       </li>
@@ -32,7 +32,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      resetToken: 'auth/resetToken'
+      resetToken: 'auth/resetToken',
+      resetJogsData: 'jogs/resetJogsData'
     }),
     visitLink(route) {
       this.$router.push(route, () => {
@@ -41,6 +42,7 @@ export default {
     },
     logout() {
       this.resetToken();
+      this.resetJogsData();
       this.$router.push('/', () => {
         this.$emit('close-menu');
       });
