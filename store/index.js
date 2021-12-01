@@ -7,6 +7,9 @@ export const getters = {
 }
 
 export const actions = {
+  async nuxtServerInit({ dispatch, state }) {
+    await dispatch('auth/checkToken');
+  },
   async setMenuToggle({ commit }, value) {
     commit('SET_MENU_TOGGLE', { value });
   }

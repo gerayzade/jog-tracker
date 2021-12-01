@@ -1,5 +1,4 @@
-export default function ({ store, route, redirect, app }) {
-  app.$cookies.set('redirect_path', route.path);
+export default function ({ store, redirect }) {
   if (!store.state.auth.loggedIn) {
     return redirect('/');
   }

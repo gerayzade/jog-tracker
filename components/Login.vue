@@ -19,8 +19,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      getToken: 'auth/getToken',
-      checkToken: 'auth/checkToken'
+      getToken: 'auth/getToken'
     }),
     async login() {
       if (this.pending) return;
@@ -33,24 +32,6 @@ export default {
       } catch(error) {
         this.pending = false;
       }
-    }
-  },
-  async beforeMount() {
-    this.pending = true;
-    try {
-      await this.checkToken();
-      this.$nextTick(() => {
-        if (this.loggedIn) {
-          let redirectPath = this.$cookies.get('redirect_path') || '/jogs';
-          this.$router.push(redirectPath, () => {
-            this.pending = false;
-          });
-        } else {
-          this.pending = false;
-        }
-      });
-    } catch(error) {
-      this.pending = false;
     }
   }
 }

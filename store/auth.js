@@ -8,19 +8,25 @@ export const getters = {
 
 export const actions = {
   async checkToken({ commit }) {
-    if (!localStorage.getItem('access_token')) return;
-    const { data } = await this.$axios.get('/auth/user');
-    commit('SET_LOGGED_IN', { value: true });
+    if (this.$cookies.get('access_token')) {
+      try {
+        const { data } = await this.$axios.get('/auth/user');
+        commit('SET_LOGGED_IN', { value: true });
+      } catch(error) {
+        // remove token if it is expired or invalid
+        this.$cookies.remove('access_token');
+      }
+    }
   },
   async getToken({ commit }) {
     const { data: { response: { access_token } } } = await this.$axios.post('/auth/uuidLogin', {
       uuid: 'hello'
     });
-    localStorage.setItem('access_token', JSON.stringify(access_token));
+    this.$cookies.set('access_token', access_token);
     commit('SET_LOGGED_IN', { value: true });
   },
   resetToken({ commit }) {
-    localStorage.removeItem('access_token');
+    this.$cookies.remove('access_token');
     commit('SET_LOGGED_IN', { value: false });
   }
 }

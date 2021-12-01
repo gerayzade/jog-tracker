@@ -1,10 +1,8 @@
-export default function ({ $axios, error }) {
+export default function ({ $axios, error, app }) {
   $axios.onRequest((config) => {
-    if (process.client) {
-      let access_token = localStorage.getItem('access_token');
-      if (access_token) {
-        config.headers['Authorization'] = `Bearer ${JSON.parse(access_token)}`;
-      }
+    let access_token = app.$cookies.get('access_token');
+    if (access_token) {
+      config.headers['Authorization'] = `Bearer ${access_token}`;
     }
   });
 

@@ -23,7 +23,6 @@
 <script>
 export default {
   name: 'page-about',
-  middleware: 'basic',
   head() {
     return this.$headMeta({
       title: 'About'

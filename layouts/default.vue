@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters } from 'vuex';
 
 import PageHeader from '~/components/PageHeader';
 import PageFooter from '~/components/PageFooter';
@@ -27,16 +27,6 @@ export default {
     ...mapGetters({
       menuToggle: 'menuToggle'
     })
-  },
-  methods: {
-    ...mapActions({
-      checkToken: 'auth/checkToken'
-    })
-  },
-  async beforeMount() {
-    if (!this.loggedIn && this.$route.name !== 'index') {
-      await this.checkToken();
-    }
   }
 }
 </script>
