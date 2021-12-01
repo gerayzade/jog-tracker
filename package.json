@@ -31,6 +31,7 @@
     "jest": "^27.0.5",
     "node-sass": "^6.0.1",
     "sass-loader": "^12.3.0",
-    "vue-jest": "^3.0.4"
+    "vue-jest": "^3.0.4",
+    "webpack": "^4.46.0"
   }
 }
