@@ -197,14 +197,27 @@ a {
   }
 }
 
-/* Layout */
+/* Mobile viewport bug fix */
+  
+html {
+  height: -webkit-fill-available;
+}
 
-.layout {
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  /* Mobile viewport bug fix */
   min-height: -webkit-fill-available;
+}
+
+/* Layout */
+
+#__nuxt,
+#__layout,
+.layout {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .main {
