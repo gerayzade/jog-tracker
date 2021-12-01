@@ -35,9 +35,11 @@
 
 @mixin btn-styles($color-1, $color-2) {
   color: $color-1;
-  &:hover {
-    background-color: $color-1;
-    border-color: $color-1;
-    color: $color-2;
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color-1;
+      border-color: $color-1;
+      color: $color-2;
+    }
   }
 }
