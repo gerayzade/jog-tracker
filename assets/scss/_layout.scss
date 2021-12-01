@@ -203,6 +203,8 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  /* Mobile viewport bug fix */
+  min-height: -webkit-fill-available;
 }
 
 .main {
@@ -321,6 +323,8 @@ a {
   .menu-open {
     height: 100vh;
     overflow: hidden;
+    /* Mobile viewport bug fix */
+    height: -webkit-fill-available;
     .header {
       position: fixed;
       width: 100%;
