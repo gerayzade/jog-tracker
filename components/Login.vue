@@ -41,7 +41,7 @@ export default {
       await this.checkToken();
       this.$nextTick(() => {
         if (this.loggedIn) {
-          let redirectPath = localStorage.getItem('redirect_path') || '/jogs';
+          let redirectPath = this.$cookies.get('redirect_path') || '/jogs';
           this.$router.push(redirectPath, () => {
             this.pending = false;
           });

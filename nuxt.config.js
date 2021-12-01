@@ -16,20 +16,20 @@ export default {
     { src: '~/plugins/client-only', ssr: false }
   ],
   modules: [
-    '@nuxtjs/axios',
+    ['@nuxtjs/axios', {
+      baseURL: process.env.APP_API_URL
+    }],
     ['nuxt-env', {
       keys: [
         { key: 'BASE_URL', default: process.env.APP_BASE_URL },
         { key: 'API_URL', default: process.env.APP_API_URL }
       ]
-    }]
+    }],
+    ['cookie-universal-nuxt']
   ],
   router: {
     linkActiveClass: 'active',
     linkExactActiveClass: 'exact-active',
-  },
-  axios: {
-    baseURL: process.env.APP_API_URL
   },
   server: {
     port: process.env.PORT || 3000,
