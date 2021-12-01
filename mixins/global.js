@@ -4,7 +4,8 @@ export const GlobalMixin = {
   computed: {
     ...mapGetters({
       loggedIn: 'auth/loggedIn',
-      jogsTotal: 'jogs/total'
+      jogsTotal: 'jogs/totalCount',
+      jogsFiltered: 'jogs/filteredCount'
     })
   },
   methods: {

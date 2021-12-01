@@ -1,10 +1,10 @@
 <template>
   <div class="jogs-list">
     <jogs-item :jog="jog" v-for="jog in jogsDisplayed" :key="jog.id" />
-    <div class="jogs-list__empty" v-if="!jogs.length">
+    <div class="jogs-list__empty" v-if="!jogsFiltered">
       <svg-icon name="oops" />
       <p>Nothing is there</p>
-      <nuxt-link to="/jogs/create" class="btn" v-if="!total">
+      <nuxt-link to="/jogs/create" class="btn" v-if="!jogsTotal">
         Create your jog first
       </nuxt-link>
     </div>
@@ -39,8 +39,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      jogs: 'jogs/jogsList',
-      total: 'jogs/total'
+      jogs: 'jogs/jogsList'
     }),
     jogsDisplayed() {
       return this.jogs.slice(0, this.showCount);

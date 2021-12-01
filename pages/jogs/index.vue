@@ -1,5 +1,5 @@
 <template>
-  <main :class="['main', { 'main--content-centered': !jogs.length }]">
+  <main :class="['main', { 'main--content-centered': !jogsFiltered }]">
     <div class="container">
       <jogs-list />
       <div class="btn-add" v-if="jogsTotal > 0">
@@ -12,8 +12,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
 import JogsList from '~/components/JogsList';
 
 export default {
@@ -31,11 +29,6 @@ export default {
     return this.$headMeta({
       title: 'Jogs list'
     });
-  },
-  computed: {
-    ...mapGetters({
-      jogs: 'jogs/jogsList'
-    })
   }
 }
 </script>

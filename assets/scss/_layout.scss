@@ -418,3 +418,14 @@ a {
 .fade-leave-active { 
   transition: 0.5s;
 }
+
+.expand-enter-active,
+.expand-leave-active {
+  transition: height .3s ease-in-out;
+  overflow: hidden;
+}
+
+.expand-enter,
+.expand-leave-to {
+  height: 0;
+}

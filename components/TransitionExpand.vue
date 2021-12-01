@@ -11,6 +11,7 @@
 
 <script>
   export default {
+    name: 'transition-expand',
     methods: {
       enter(element) {
         const width = getComputedStyle(element).width;
@@ -59,20 +60,3 @@
     },
   };
 </script>
-
-<style lang="scss" scoped>
-  * {
-    will-change: height;
-  }
-
-  .expand-enter-active,
-  .expand-leave-active {
-    transition: height .3s ease-in-out;
-    overflow: hidden;
-  }
-
-  .expand-enter,
-  .expand-leave-to {
-    height: 0;
-  }
-</style>

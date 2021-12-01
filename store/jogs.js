@@ -22,7 +22,7 @@ const parseDate = (date, format) => {
 
 export const getters = {
   filters: s => s.filters,
-  total: s => s.jogs.length,
+  totalCount: s => s.jogs.length,
   jogsList: s => sortBy(s.jogs, 'id')
     .filter((jog) => {
       let isAfter = !isDate(s.filters.dateFrom) || parseDate(jog.date).isAfter(parseDate(s.filters.dateFrom, 'DD/MM/YYYY'));
@@ -34,7 +34,8 @@ export const getters = {
       ...jog,
       speed: Math.round((jog.distance / jog.time) * 100) / 100,
       humanize_date: parseDate(jog.date).format('DD.MM.YYYY')
-    }))
+    })),
+  filteredCount: (_, g) => g.jogsList.length
 }
 
 export const actions = {

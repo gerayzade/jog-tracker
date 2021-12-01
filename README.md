@@ -15,4 +15,7 @@ $ yarn start
 
 # generate static project
 $ yarn generate
+
+# run test suites
+$ yarn jest
 ```
