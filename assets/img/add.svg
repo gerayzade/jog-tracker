@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="47pt" height="47pt" viewBox="0 0 47 47">
+<g enable-background="new">
+<g>
+<clipPath id="cp_add0">
+<path transform="matrix(1,0,0,-1,0,47)" d="M .03032258 46.9 L 46.93885 46.9 L 46.93885 .4995 L .03032258 .4995 L .03032258 46.9 Z " fill-rule="evenodd"/>
+</clipPath>
+<g clip-path="url(#cp_add0)">
+<clipPath id="cp_add1">
+<path transform="matrix(1,0,0,-1,0,47)" d="M -298 -30 L 77 -30 L 77 637 L -298 637 Z "/>
+</clipPath>
+<g clip-path="url(#cp_add1)">
+<g>
+<clipPath id="cp_add2">
+<path transform="matrix(1,0,0,-1,0,47)" d="M 0 0 L 47 0 L 47 47 L 0 47 Z "/>
+</clipPath>
+<g clip-path="url(#cp_add2)">
+<clipPath id="cp_add3">
+<path transform="matrix(1,0,0,-1,0,47)" d="M 23.48989 46.9 C 10.55175 46.9 0 36.4995 0 23.701 C 0 10.9 10.51233 .4995 23.48989 .4995 C 36.42652 .4995 46.93885 10.9 46.93885 23.701 C 46.93885 36.4995 36.42652 46.9 23.48989 46.9 Z M 23.48989 3.74 C 12.37161 3.74 3.314763 12.701 3.314763 23.701 C 3.314763 34.701 12.37161 43.66 23.48989 43.66 C 34.60817 43.66 43.66351 34.701 43.66351 23.701 C 43.66351 12.701 34.60817 3.74 23.48989 3.74 Z " fill-rule="evenodd"/>
+</clipPath>
+<g clip-path="url(#cp_add3)">
+<clipPath id="cp_add4">
+<path transform="matrix(1,0,0,-1,0,47)" d="M 0 0 L 47 0 L 47 47 L 0 47 Z "/>
+</clipPath>
+<g clip-path="url(#cp_add4)">
+<path transform="matrix(1,0,0,-1,0,47)" d="M -5 -4.5005 L 51.93885 -4.5005 L 51.93885 51.9 L -5 51.9 Z " fill="#7ed321"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<clipPath id="cp_add5">
+<path transform="matrix(1,0,0,-1,0,47)" d="M 34.28473 25.5405 L 25.14854 25.5405 L 25.14854 34.6205 C 25.14854 35.5405 24.41978 36.2595 23.48989 36.2595 C 22.56051 36.2595 21.83175 35.5405 21.83175 34.6205 L 21.83175 25.5795 L 12.69556 25.5795 C 11.76567 25.5795 11.03742 24.861 11.03742 23.939 C 11.03742 23.019 11.76567 22.3005 12.69556 22.3005 L 21.83175 22.3005 L 21.83175 13.2595 C 21.83175 12.3395 22.56051 11.6205 23.48989 11.6205 C 24.41978 11.6205 25.14854 12.3395 25.14854 13.2595 L 25.14854 22.3005 L 34.28473 22.3005 C 35.21462 22.3005 35.94287 23.019 35.94287 23.939 C 35.94287 24.861 35.21462 25.5405 34.28473 25.5405 Z " fill-rule="evenodd"/>
+</clipPath>
+<g clip-path="url(#cp_add5)">
+<clipPath id="cp_add6">
+<path transform="matrix(1,0,0,-1,0,47)" d="M -298 -30 L 77 -30 L 77 637 L -298 637 Z "/>
+</clipPath>
+<g clip-path="url(#cp_add6)">
+<path transform="matrix(1,0,0,-1,0,47)" d="M 6.037419 6.6205 L 40.942869 6.6205 L 40.942869 41.2595 L 6.037419 41.2595 Z " fill="#7ed321"/>
+</g>
+</g>
+</g>
+</g>
+</svg>

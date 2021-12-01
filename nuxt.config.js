@@ -1,46 +1,59 @@
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    title: 'jog-tracker',
-    htmlAttrs: {
-      lang: 'en'
-    },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+  components: false,
+  loading: {
+    color: '#979797',
+    failedColor: '#d32125',
+    height: '3px'
   },
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/scss/style.scss'
   ],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~/mixins/global' },
+    { src: '~/plugins/components' },
+    { src: '~/plugins/functions' },
+    { src: '~/plugins/axios' }
   ],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  modules: [
+    '@nuxtjs/axios',
+    ['nuxt-env', {
+      keys: [
+        { key: 'BASE_URL', default: process.env.APP_BASE_URL },
+        { key: 'API_URL', default: process.env.APP_API_URL }
+      ]
+    }]
+  ],
+  router: {
+    linkActiveClass: 'active',
+    linkExactActiveClass: 'exact-active',
+  },
+  axios: {
+    baseURL: process.env.APP_API_URL
+  },
+  server: {
+    port: process.env.PORT || 3000,
+    host: process.env.HOST || '0.0.0.0'
+  },
   buildModules: [
   ],
-
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-  ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    postcss: {
+      plugins: {
+        autoprefixer: {},
+        cssnano: {}
+      }
+    }
+  },
+  render: {
+    bundleRenderer: {
+      shouldPreload: (file, type) => {
+        if (type === 'script' || type === 'style') {
+          return true
+        } else if (type === 'font') {
+          // only preload woff2 fonts
+          return /\.woff2$/.test(file)
+        }
+      }
+    }
   }
 }

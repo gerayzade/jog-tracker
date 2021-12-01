@@ -1,0 +1,61 @@
+.jogs-list {
+  margin: 0 -25px;
+  &__empty {
+    .svg-icon {
+      display: block;
+      font-size: 85px;
+      margin: 0 auto 30px;
+    }
+    p {
+      color: $grey-3;
+      font-size: 24px;
+      margin: 0 0 145px;
+      text-align: center;
+    }
+  }
+  &__item {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid $white-3;
+    padding: 48px 25px;
+    &-left {
+      margin-right: 46px;
+      .svg-icon {
+        display: block;
+        font-size: 87px;
+      }
+    }
+    &-right {
+      display: flex;
+      flex-direction: column;
+      span {
+        color: $grey-3;
+      }
+      strong {
+        font-weight: 500;
+        margin-top: 12px;
+        span {
+          color: $grey-1;
+        }
+      }
+    }
+  }
+}
+
+@include media-min-width(md) {
+  .jogs-list {
+    margin: 0;
+    &__empty {
+      .svg-icon {
+        font-size: 150px;
+        margin: 0 auto 47px;
+      }
+    }
+    &__item {
+      border-bottom: none;
+      padding: 44px 0;
+    }
+  }
+}

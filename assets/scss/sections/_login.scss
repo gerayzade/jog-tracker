@@ -1,0 +1,28 @@
+/* Login */
+
+.login {
+  text-align: center;
+  &__icon {
+    display: block;
+    width: 160px;
+    height: 150px;
+    margin: 0 auto 103px;
+    fill: $purple-1;
+  }
+}
+
+@include media-min-width(md) {
+  .login {
+    width: 503px;
+    padding: 77px 0 36px;
+    background-color: $purple-1;
+    border-radius: 44px;
+    &__icon {
+      margin: 0 auto 56px;
+      fill: $white-1;
+    }
+    .btn {
+      @include btn-styles($white-1, $purple-1);
+    }
+  }
+}

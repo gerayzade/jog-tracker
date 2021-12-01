@@ -1,0 +1,43 @@
+/* Media queries */
+
+@mixin media-max-width($breakpoint) {
+  @media (max-width: (map-get($breakpoints, $breakpoint) - 0.02px)) {
+    @content;
+  }
+}
+
+@mixin media-min-width($breakpoint) {
+  @media (min-width: (map-get($breakpoints, $breakpoint))) {
+    @content;
+  }
+}
+
+/* Screen reader only */
+
+@mixin sr-only {
+  border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+  clip-path: inset(50%) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+}
+
+.sr-only {
+	@include sr-only;
+}
+
+/* Button styles */
+
+@mixin btn-styles($color-1, $color-2) {
+  color: $color-1;
+  &:hover {
+    background-color: $color-1;
+    border-color: $color-1;
+    color: $color-2;
+  }
+}
